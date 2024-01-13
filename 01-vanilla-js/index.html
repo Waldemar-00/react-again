@@ -11,11 +11,14 @@
     <link rel="icon" type="image/png" href="favicons/favicon.ico"  />
   </head>
   <body>
-    <button type="button">Click Me</button>
+    <button id='btn-change-text' onclick="onChangeText('btn-change-text')" type="button">Click Me</button>
     <script>
-      document.querySelector('button').addEventListener("click", () => {
-        document.querySelector('button').innerText = 'Vanilla JS'
-      })
+      const onChangeText = (id) => {
+        document.querySelector(`#${id}`).innerText = 'Hello vanilla JS'
+      }
+      // document.querySelector('button').addEventListener("click", () => {
+        // document.querySelector('button').innerText = 'Vanilla JS'
+      // })
     </script>
   </body>
 </html>
