@@ -64,22 +64,9 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <script type="text/babel">
-      const DivWithButton = (
-        <div className='app'>
-          <button
-            // id='our-btn'
-            onClick={(e) => changeButton(e)}
-          >
-            Hello JSX!
-          </button>
-        </div>
-      )
-      function changeButton(e) {
-        // document.getElementById('our-btn').className = 'btn-green'
-        e.target.className = 'btn-green'
-      }
-      ReactDOM.createRoot(document.querySelector('#root')).render(DivWithButton)
-    </script>
+    <script
+      src="script.js"
+      type="text/babel"
+    ></script>
   </body>
 </html>
