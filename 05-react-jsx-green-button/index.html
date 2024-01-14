@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>React JSX green button!</title>
+    <style>
+      .app {
+        text-align: center;
+        margin: 2rem auto;
+      }
+      .btn-green {
+        color: white;
+        background-color: green;
+        width: 10rem;
+        height: 5rem;
+      }
+    </style>
+    <style>
+      .order[data-order-state='new'] {
+        color: green;
+      }
+
+      .order[data-order-state='pending'] {
+        color: blue;
+      }
+
+      .order[data-order-state='canceled'] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div
+      class="order"
+      data-order-state="new"
+    >
+      A new order.
+    </div>
+
+    <div
+      class="order"
+      data-order-state="pending"
+    >
+      A pending order.
+    </div>
+
+    <div
+      class="order"
+      data-order-state="canceled"
+    >
+      A canceled order.
+    </div>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      const DivWithButton = (
+        <div className='app'>
+          <button
+            // id='our-btn'
+            onClick={(e) => changeButton(e)}
+          >
+            Hello JSX!
+          </button>
+        </div>
+      )
+      function changeButton(e) {
+        // document.getElementById('our-btn').className = 'btn-green'
+        e.target.className = 'btn-green'
+      }
+      ReactDOM.createRoot(document.querySelector('#root')).render(DivWithButton)
+    </script>
+  </body>
+</html>
