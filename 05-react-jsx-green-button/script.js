@@ -1,12 +1,19 @@
 const DivWithButton = () => {
   const [textBtn, setTextBtn] = React.useState('Hello JSX!')
-  function changeButton(e) {
-    e.target.className = 'btn-green'
+  const [classGreenBtn, setGreenBtn] = React.useState('')
+  function changeButton() {
+    setGreenBtn('btn-green')
     setTextBtn('The text was changed!')
   }
   return (
     <div className='app'>
-      <button onClick={(e) => changeButton(e)}>{textBtn}</button>
+      <button
+        type='button'
+        className={classGreenBtn}
+        onClick={changeButton}
+      >
+        {textBtn}
+      </button>
     </div>
   )
 }
