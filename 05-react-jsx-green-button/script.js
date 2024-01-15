@@ -1,9 +1,9 @@
-const DivWithButton = (props) => {
-  const [textBtn, setTextBtn] = React.useState(props.textBtn)
+const DivWithButton = ({ textBtn: startText, classBtnGreen, newTextBtn }) => {
+  const [textBtn, setTextBtn] = React.useState(startText)
   const [classGreenBtn, setGreenBtn] = React.useState('')
   function changeButton() {
-    setGreenBtn(props.classBtnGreen)
-    setTextBtn(props.newTextBtn)
+    setGreenBtn(classBtnGreen)
+    setTextBtn(newTextBtn)
   }
   return (
     <div className='app'>
