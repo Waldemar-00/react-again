@@ -1,9 +1,9 @@
-const DivWithButton = () => {
-  const [textBtn, setTextBtn] = React.useState('Hello JSX!')
+const DivWithButton = (props) => {
+  const [textBtn, setTextBtn] = React.useState(props.textBtn)
   const [classGreenBtn, setGreenBtn] = React.useState('')
   function changeButton() {
-    setGreenBtn('btn-green')
-    setTextBtn('The text was changed!')
+    setGreenBtn(props.classBtnGreen)
+    setTextBtn(props.newTextBtn)
   }
   return (
     <div className='app'>
@@ -18,4 +18,10 @@ const DivWithButton = () => {
   )
 }
 
-ReactDOM.createRoot(document.querySelector('#root')).render(<DivWithButton />)
+ReactDOM.createRoot(document.querySelector('#root')).render(
+  <DivWithButton
+    textBtn='Hello JSX!'
+    classBtnGreen='btn-green'
+    newTextBtn='The text was changed!'
+  />,
+)
