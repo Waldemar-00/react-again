@@ -1,11 +1,12 @@
 const DivWithButton = () => {
+  const [textBtn, setTextBtn] = React.useState('Hello JSX!')
   function changeButton(e) {
     e.target.className = 'btn-green'
-    e.target.innerText = 'The text was changed!'
+    setTextBtn('The text was changed!')
   }
   return (
     <div className='app'>
-      <button onClick={(e) => changeButton(e)}>Hello JSX!</button>
+      <button onClick={(e) => changeButton(e)}>{textBtn}</button>
     </div>
   )
 }
