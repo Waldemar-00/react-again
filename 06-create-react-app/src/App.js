@@ -10,9 +10,10 @@ function App() {
           className='App-logo'
           alt='logo'
         />
-        {/* <p>
+        <h1>Hello from Create React App</h1>
+        <p>
           Edit <code>src/App.js</code> and save to reload.
-        </p> */}
+        </p>
         <a
           className='App-link'
           href='https://reactjs.org'
@@ -21,6 +22,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>String for tests from React</p>
       </header>
     </div>
   )
