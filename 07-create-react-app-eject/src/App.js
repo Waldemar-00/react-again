@@ -22,7 +22,7 @@ function App() {
         >
           Learn React
         </a>
-        <p>String for tests from React</p>
+        <p>React App after using command - npm run eject!</p>
       </header>
     </div>
   )
