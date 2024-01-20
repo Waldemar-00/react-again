@@ -9,7 +9,7 @@ function App() {
       />
       <PetInfo
         animal='Dog'
-        age='four'
+        age={4}
       />
     </div>
   )

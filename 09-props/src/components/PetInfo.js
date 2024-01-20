@@ -1,7 +1,7 @@
-function PetInfo(props) {
+function PetInfo({ animal, age }) {
   return (
     <h1>
-      My {props.animal} is {props.age} years old
+      My {animal} is {age} years old
     </h1>
   )
 }
