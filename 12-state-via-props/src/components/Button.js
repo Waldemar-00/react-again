@@ -1,10 +1,9 @@
 import './Button.css'
 function Button(props) {
-  function onChangeCounter() {}
   return (
     <button
       type='button'
-      onClick={onChangeCounter}
+      onClick={() => props.onChangeCounter(props.added)}
     >{`Plus ${props.added}`}</button>
   )
 }

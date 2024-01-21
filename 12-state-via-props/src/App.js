@@ -1,15 +1,36 @@
+import React from 'react'
 import './App.css'
 import Counter from './components/Counter'
 import Button from './components/Button'
+let initialNumber = 0
 function App() {
+  const [counterValue, setCounterValue] = React.useState(0)
+  function onChangeCounter(number) {
+    setCounterValue((initialNumber = initialNumber + number))
+  }
   return (
     <div className='App'>
-      <Counter number={0} />
-      <Button added={1} />
-      <Button added={2} />
-      <Button added={3} />
-      <Button added={4} />
-      <Button added={5} />
+      <Counter number={counterValue} />
+      <Button
+        added={1}
+        onChangeCounter={onChangeCounter}
+      />
+      <Button
+        added={2}
+        onChangeCounter={onChangeCounter}
+      />
+      <Button
+        added={3}
+        onChangeCounter={onChangeCounter}
+      />
+      <Button
+        added={4}
+        onChangeCounter={onChangeCounter}
+      />
+      <Button
+        added={5}
+        onChangeCounter={onChangeCounter}
+      />
     </div>
   )
 }
