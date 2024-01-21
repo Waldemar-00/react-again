@@ -1,3 +1,3 @@
-export function getRandomRoundNumber() {
-  return Math.round(Math.random() * 1000)
+export function getRandomRoundNumber(maxNumber) {
+  return Math.round(Math.random() * maxNumber)
 }
