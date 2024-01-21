@@ -8,6 +8,9 @@ function App() {
   function onChangeCounter(number) {
     setCounterValue((initialNumber = initialNumber + number))
   }
+  function onResetCounter() {
+    setCounterValue(0)
+  }
   return (
     <div className='App'>
       <Counter number={counterValue} />
@@ -31,6 +34,12 @@ function App() {
         added={5}
         onChangeCounter={onChangeCounter}
       />
+      <div>
+        <Button
+          text='Reset'
+          onChangeCounter={onResetCounter}
+        />
+      </div>
     </div>
   )
 }
