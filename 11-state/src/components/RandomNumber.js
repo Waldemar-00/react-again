@@ -1,10 +1,12 @@
 import React from 'react'
 import { getRandomRoundNumber } from '../utils/getRandomNumber'
 import './RandomNumber.css'
-const RandomNumber = () => {
-  const [number, setNumber] = React.useState(getRandomRoundNumber(1000))
+const RandomNumber = (props) => {
+  const [number, setNumber] = React.useState(
+    getRandomRoundNumber(props.maxNumber),
+  )
   function onChangeNumber() {
-    setNumber(() => getRandomRoundNumber(1000))
+    setNumber(() => getRandomRoundNumber(props.maxNumber))
   }
   return (
     <>
