@@ -4,8 +4,8 @@ import { persons } from './data/persons'
 function App() {
   return (
     <div className='App'>
-      {persons.map((person) => {
-        const { id, firstName, lastName, email, img } = person
+      <h1>Person data</h1>
+      {persons.map(({ id, firstName, lastName, email, img }) => {
         return (
           <Person
             key={id}
