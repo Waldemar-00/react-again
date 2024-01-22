@@ -2,11 +2,11 @@ import React from 'react'
 import './App.css'
 import Counter from './components/Counter'
 import Button from './components/Button'
-let initialNumber = 0
+
 function App() {
-  const [counterValue, setCounterValue] = React.useState(0)
+  let [counterValue, setCounterValue] = React.useState(0)
   function onChangeCounter(number) {
-    setCounterValue((initialNumber = initialNumber + number))
+    setCounterValue((counterValue += number))
   }
   function onResetCounter() {
     setCounterValue(0)
