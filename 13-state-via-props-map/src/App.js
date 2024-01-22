@@ -18,6 +18,7 @@ function App() {
       {textArray.map((text, index) => {
         return (
           <Button
+            key={index}
             text={text}
             added={index + 1}
             onChangeCounter={onChangeCounter}
