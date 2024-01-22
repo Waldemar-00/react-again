@@ -1,9 +1,11 @@
-section {
-  width: 30%;
-  margin-top: 2rem;
-  border-bottom: 2px solid limegreen;
+.card {
+  width: 24rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border: 2px solid limegreen;
+  border-radius: 1rem;
 }
-section img {
+.card img {
   width: 8rem;
   height: 8rem;
   border-radius: 100%;

@@ -1,7 +1,7 @@
 import './Person.css'
 function Person({ firstName, lastName, email, img }) {
   return (
-    <section>
+    <div className='card'>
       <img
         src={img}
         alt='person'
@@ -10,7 +10,7 @@ function Person({ firstName, lastName, email, img }) {
         {firstName} {lastName}
       </h2>
       <h3>{email}</h3>
-    </section>
+    </div>
   )
 }
 export default Person
