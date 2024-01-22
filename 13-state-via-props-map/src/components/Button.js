@@ -4,7 +4,9 @@ function Button({ text = 'Plus', added = '', onChangeCounter }) {
     <button
       type='button'
       onClick={() => onChangeCounter(added)}
-    >{`${text} ${added}`}</button>
+    >
+      {text}
+    </button>
   )
 }
 export default Button

@@ -11,29 +11,19 @@ function App() {
   function onResetCounter() {
     setCounterValue(0)
   }
+  const textArray = ['Plus 1', 'Plus 2', 'Plus 3', 'Plus 4', 'Plus 5']
   return (
     <div className='App'>
       <Counter number={counterValue} />
-      <Button
-        added={1}
-        onChangeCounter={onChangeCounter}
-      />
-      <Button
-        added={2}
-        onChangeCounter={onChangeCounter}
-      />
-      <Button
-        added={3}
-        onChangeCounter={onChangeCounter}
-      />
-      <Button
-        added={4}
-        onChangeCounter={onChangeCounter}
-      />
-      <Button
-        added={5}
-        onChangeCounter={onChangeCounter}
-      />
+      {textArray.map((text, index) => {
+        return (
+          <Button
+            text={text}
+            added={index + 1}
+            onChangeCounter={onChangeCounter}
+          />
+        )
+      })}
       <div>
         <Button
           text='Reset'
