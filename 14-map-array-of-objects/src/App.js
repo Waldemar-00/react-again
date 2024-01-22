@@ -5,14 +5,11 @@ function App() {
   return (
     <div className='App'>
       <h1>Person data</h1>
-      {persons.map(({ id, firstName, lastName, email, img }) => {
+      {persons.map((person) => {
         return (
           <Person
-            key={id}
-            firstName={firstName}
-            lastName={lastName}
-            email={email}
-            img={img}
+            key={person.id}
+            {...person}
           />
         )
       })}

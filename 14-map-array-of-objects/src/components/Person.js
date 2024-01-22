@@ -10,7 +10,6 @@ function Person({ firstName, lastName, email, img }) {
         src={`${img}`}
         alt='person'
       />
-      <hr />
     </section>
   )
 }
