@@ -3,3 +3,8 @@ section {
   margin-top: 2rem;
   border-bottom: 2px solid limegreen;
 }
+section img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100%;
+}
