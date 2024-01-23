@@ -1,7 +1,16 @@
 import './Login.css'
 function Login() {
+  function onSubmitHandle(e) {
+    e.preventDefault()
+    const userData = {
+      username: e.target.username.value,
+      password: e.target.password.value,
+    }
+    console.log(userData)
+    alert(JSON.stringify(userData))
+  }
   return (
-    <form>
+    <form onSubmit={(e) => onSubmitHandle(e)}>
       <label>
         Username:
         <input
