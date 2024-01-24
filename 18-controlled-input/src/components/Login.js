@@ -1,22 +1,21 @@
 import React from 'react'
 import './Login.css'
 function Login() {
-  const [username, setUsername] = React.useState('')
-  const [password, setPassword] = React.useState('')
+  // const [username, setUsername] = React.useState('')
+  // const [password, setPassword] = React.useState('')
+  const [userData, setUserData] = React.useState({ username: '', password: '' })
   function changeName(e) {
-    setUsername(e.target.value)
-    console.log(username)
+    // setUsername(e.target.value)
+    setUserData({ ...userData, username: e.target.value })
+    console.log(userData.username)
   }
   function changePassword(e) {
-    setPassword(e.target.value)
-    console.log(password)
+    // setPassword(e.target.value)
+    setUserData({ ...userData, password: e.target.value })
+    console.log(userData.password)
   }
   function onSubmitHandle(e) {
     e.preventDefault()
-    const userData = {
-      username,
-      password,
-    }
     console.log(userData)
     alert(JSON.stringify(userData))
   }
@@ -26,7 +25,7 @@ function Login() {
         Username:
         <input
           type='text'
-          value={username}
+          value={userData.username}
           onChange={changeName}
         />
       </label>
@@ -34,7 +33,7 @@ function Login() {
         Password:
         <input
           type='password'
-          value={password}
+          value={userData.password}
           onChange={changePassword}
         />
       </label>
