@@ -1,4 +1,9 @@
-function Post() {
-  return <h2>This is post</h2>
+function Post({ title, body }) {
+  return (
+    <div>
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </div>
+  )
 }
 export default Post

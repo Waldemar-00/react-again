@@ -3,6 +3,7 @@ import Posts from './components/Posts'
 function App() {
   return (
     <div className='App'>
+      <h1 style={{ color: 'yellowgreen' }}>ALL POST from JSONPLACEHOLDER</h1>
       <Posts />
     </div>
   )
