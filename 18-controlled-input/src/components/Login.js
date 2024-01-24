@@ -2,8 +2,8 @@ import React from 'react'
 import './Login.css'
 function Login() {
   const [userData, setUserData] = React.useState({ username: '', password: '' })
-  function changeInputValues(e, name) {
-    setUserData({ ...userData, [name]: e.target.value })
+  function changeInputValues(value, name) {
+    setUserData({ ...userData, [name]: value })
     console.log(userData[name])
   }
   function onSubmitHandle(e) {
@@ -18,7 +18,7 @@ function Login() {
         <input
           type='text'
           value={userData.username}
-          onChange={(e) => changeInputValues(e, 'username')}
+          onChange={(e) => changeInputValues(e.target.value, 'username')}
         />
       </label>
       <label>
@@ -26,7 +26,7 @@ function Login() {
         <input
           type='password'
           value={userData.password}
-          onChange={(e) => changeInputValues(e, 'password')}
+          onChange={(e) => changeInputValues(e.target.value, 'password')}
         />
       </label>
       <button type='submit'>Login</button>
