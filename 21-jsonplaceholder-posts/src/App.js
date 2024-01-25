@@ -3,9 +3,9 @@ import Posts from './components/Posts'
 function App() {
   return (
     <div className='App'>
-      <h1 style={{ color: 'yellowgreen' }}>ALL POST from JSONPLACEHOLDER</h1>
+      <h1>ALL POST from JSONPLACEHOLDER</h1>
       <Posts />
-      <h2 style={{ color: 'yellowgreen' }}>FOOTER</h2>
+      <h2>FOOTER</h2>
     </div>
   )
 }

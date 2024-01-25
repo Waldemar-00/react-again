@@ -16,8 +16,7 @@ function Posts() {
           return (
             <Post
               key={item.id}
-              title={item.title}
-              body={item.body}
+              {...item}
             />
           )
         })}

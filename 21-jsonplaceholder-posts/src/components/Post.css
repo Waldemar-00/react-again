@@ -1,0 +1,6 @@
+.post:nth-child(odd) > * {
+  color: rgb(59, 142, 59);
+}
+.post:nth-child(even) > * {
+  color: goldenrod;
+}
