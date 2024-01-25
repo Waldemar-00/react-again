@@ -1,11 +1,11 @@
 import './Post.css'
-function Post({ userId, title, body }) {
+function Post({ id, userId, title, body }) {
   return (
     <div className='post'>
-      <h3>{userId}</h3>
+      <h5>post: {id}</h5>
       <h2>{title}</h2>
       <p>{body}</p>
-      <p>{body}</p>
+      <h3>User_ID: {userId}</h3>
     </div>
   )
 }
