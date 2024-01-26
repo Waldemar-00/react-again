@@ -26,7 +26,7 @@ function Posts() {
             />
           ))}
       </section>
-      <h2>FOOTER</h2>\
+      <h2>FOOTER</h2>
     </>
   )
 }
