@@ -13,18 +13,21 @@ function Posts() {
       .catch((error) => setError(error.message))
       .finally(() => setLoading(false))
   }, [])
-  if (error) return <h2 style={{ color: 'red' }}>Error: {error}</h2>
   if (isLoading) return <h2 style={{ color: 'lightblue' }}>Loading...</h2>
+  if (error) return <h2 style={{ color: 'red' }}>Error: {error}</h2>
   return (
-    <section>
-      {Array.isArray(posts) &&
-        posts.map((item) => (
-          <Post
-            key={item.id}
-            {...item}
-          />
-        ))}
-    </section>
+    <>
+      <section>
+        {Array.isArray(posts) &&
+          posts.map((item) => (
+            <Post
+              key={item.id}
+              {...item}
+            />
+          ))}
+      </section>
+      <h2>FOOTER</h2>\
+    </>
   )
 }
 export default Posts
