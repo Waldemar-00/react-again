@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from './Post'
+import { getPosts } from '../utils/getPosts'
 const _API_URL = 'https://jsonplaceholder.typicode.com/posts'
 function Posts() {
   const [posts, setPosts] = React.useState([])
@@ -7,18 +8,18 @@ function Posts() {
   const [isLoading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
-    async function getPosts(url) {
-      try {
-        const response = await fetch(url)
-        const json = await response.json()
-        setPosts(json)
-      } catch (error) {
-        setError(error.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-    getPosts(_API_URL)
+    // async function getPosts(url) {
+    //   try {
+    //     const response = await fetch(url)
+    //     const json = await response.json()
+    //     setPosts(json)
+    //   } catch (error) {
+    //     setError(error.message)
+    //   } finally {
+    //     setLoading(false)
+    //   }
+    // }
+    getPosts({ url: _API_URL, setPosts, setError, setLoading })
     // fetch(_API_URL)
     //   .then((response) => response.json())
     //   .then((json) => setPosts(json))
