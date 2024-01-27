@@ -6,7 +6,12 @@ import TodoList from './components/Todos/TodoList'
 function App() {
   const [notes, setNotes] = React.useState([])
   function getInputValue(value) {
-    return setNotes([...notes, value])
+    setNotes([...notes, value])
+  }
+  function handleDeleteNote(index) {
+    const array = [...notes]
+    array.splice(index, 1)
+    setNotes([...array])
   }
   return (
     <div className='App'>
@@ -18,6 +23,7 @@ function App() {
       <TodoList
         className='todoList'
         notes={notes}
+        handleDeleteNote={handleDeleteNote}
       />
     </div>
   )
