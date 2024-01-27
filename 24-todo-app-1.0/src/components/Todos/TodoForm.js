@@ -1,8 +1,9 @@
+import Input from '../UI/Input'
 import Button from '../UI/Button'
 function TodoForm() {
   return (
     <form>
-      <input
+      <Input
         type='text'
         placeholder='Enter new todo'
       />
