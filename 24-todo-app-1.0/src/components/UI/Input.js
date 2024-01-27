@@ -1,8 +1,8 @@
 import styles from './Input.module.css'
-function Input({ type, placeholder }) {
+function Input({ type, placeholder, className }) {
   return (
     <input
-      className={styles.addTodo}
+      className={styles[className]}
       type={type}
       placeholder={placeholder}
     />

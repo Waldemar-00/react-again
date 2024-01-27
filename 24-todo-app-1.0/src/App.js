@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='App'>
       <Heading />
-      <TodoForm />
+      <TodoForm className='TodoForm' />
     </div>
   )
 }

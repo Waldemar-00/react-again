@@ -1,13 +1,19 @@
+import styles from './TodoForm.module.css'
 import Input from '../UI/Input'
 import Button from '../UI/Button'
-function TodoForm() {
+function TodoForm({ className }) {
   return (
-    <form>
+    <form className={styles[className]}>
       <Input
         type='text'
         placeholder='Enter new todo'
+        className='addTodo'
       />
-      <Button text={'Submit'} />
+      <Button
+        type='submit'
+        text={'Submit'}
+        className='addTodo'
+      />
     </form>
   )
 }
