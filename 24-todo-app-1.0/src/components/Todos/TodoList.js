@@ -1,11 +1,10 @@
 import styles from './TodoList.module.css'
-function TodoList({ className }) {
+function TodoList({ className, notes }) {
   return (
     <ul className={styles[className]}>
-      <li>Get prodacts form the store</li>
-      <li>Meet friends</li>
-      <li>Meet friends</li>
-      <li>Meet friends</li>
+      {notes.map((note) => (
+        <li>{note}</li>
+      ))}
     </ul>
   )
 }
