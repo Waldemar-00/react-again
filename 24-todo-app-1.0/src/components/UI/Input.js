@@ -1,13 +1,5 @@
-import React from 'react'
 import styles from './Input.module.css'
-function Input({ type, placeholder, className, name }) {
-  const [value, setValue] = React.useState('')
-  function handleChangeValue(e) {
-    setValue(e.target.value)
-  }
-  function handlerBlur(e) {
-    if (e.target.value.trim() === '') setValue('')
-  }
+function Input({ type, placeholder, className, name, value, handleChangeValue, handleBlur }) {
   return (
     <input
       name={name}
@@ -15,8 +7,8 @@ function Input({ type, placeholder, className, name }) {
       type={type}
       placeholder={placeholder}
       value={value}
-      onChange={handleChangeValue}
-      onBlur={handlerBlur}
+      onChange={(e) => handleChangeValue(e.target.value)}
+      onBlur={(e) => handleBlur(e.target.value)}
     />
   )
 }

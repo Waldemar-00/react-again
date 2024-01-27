@@ -4,6 +4,7 @@ import TodoForm from './components/Todos/TodoForm'
 import TodoList from './components/Todos/TodoList'
 function App() {
   function getInputValue(value) {
+    console.log(value)
     return value
   }
   return (
