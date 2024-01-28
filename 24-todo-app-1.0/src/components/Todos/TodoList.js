@@ -1,7 +1,7 @@
 import styles from './TodoList.module.css'
-function TodoList({ className, notes, handleDeleteNote }) {
+function TodoList({ notes, handleDeleteNote }) {
   return (
-    <ul className={styles[className]}>
+    <ul className={styles.todoList}>
       {notes.map((note, index) => (
         <li
           key={index}

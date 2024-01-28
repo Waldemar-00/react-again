@@ -1,7 +1,6 @@
 import React from 'react'
-import styles from './TodoForm.module.css'
-
-function TodoForm({ className, getInputValue }) {
+import './TodoForm.module.css'
+function TodoForm({ getInputValue }) {
   const [value, setValue] = React.useState('')
   function handleChangeValue(value) {
     setValue(value)
@@ -16,25 +15,16 @@ function TodoForm({ className, getInputValue }) {
     if (value.trim() === '') setValue('')
   }
   return (
-    <form
-      className={styles[className]}
-      onSubmit={handleSubmit}
-    >
+    <form onSubmit={handleSubmit}>
       <input
         type='text'
         placeholder='Enter new todo'
-        className={styles.addTodo}
         name='input'
         value={value}
         onChange={(e) => handleChangeValue(e.target.value)}
         onBlur={(e) => handleBlur(e.target.value)}
       />
-      <button
-        type='submit'
-        className={styles.submitButton}
-      >
-        Submit
-      </button>
+      <button type='submit'>Submit</button>
     </form>
   )
 }

@@ -16,10 +16,7 @@ function App() {
   return (
     <div className='App'>
       <Heading />
-      <TodoForm
-        className='todoForm'
-        getInputValue={getInputValue}
-      />
+      <TodoForm getInputValue={getInputValue} />
       <TodoList
         className='todoList'
         notes={notes}
