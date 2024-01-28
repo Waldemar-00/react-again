@@ -1,0 +1,25 @@
+.todoList {
+  list-style: none;
+  margin-top: 3rem;
+}
+.empty {
+  color: #f1f4d8;
+  margin-top: 3rem;
+}
+.todoList li {
+  width: 30rem;
+  height: 2rem;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #f8fef5;
+  text-align: left;
+  margin: 1rem auto;
+}
+.riIcon {
+  vertical-align: text-bottom;
+  color: teal;
+  margin-right: 5px;
+  font-size: 1.7rem;
+}

@@ -1,0 +1,10 @@
+.addTodo {
+  display: inline-block;
+  background-color: #f1f4d8;
+  width: 7rem;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
