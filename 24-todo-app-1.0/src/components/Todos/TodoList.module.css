@@ -17,3 +17,9 @@
   text-align: left;
   margin: 1rem auto;
 }
+.riIcon {
+  vertical-align: text-bottom;
+  color: teal;
+  margin-right: 5px;
+  font-size: 1.7rem;
+}
