@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './TodoForm.module.css'
-import Input from '../UI/Input'
-import Button from '../UI/Button'
+
 function TodoForm({ className, getInputValue }) {
   const [value, setValue] = React.useState('')
   function handleChangeValue(value) {
@@ -21,20 +20,21 @@ function TodoForm({ className, getInputValue }) {
       className={styles[className]}
       onSubmit={handleSubmit}
     >
-      <Input
+      <input
         type='text'
         placeholder='Enter new todo'
-        className='addTodo'
+        className={styles.addTodo}
         name='input'
         value={value}
-        handleChangeValue={handleChangeValue}
-        handleBlur={handleBlur}
+        onChange={(e) => handleChangeValue(e.target.value)}
+        onBlur={(e) => handleBlur(e.target.value)}
       />
-      <Button
+      <button
         type='submit'
-        text={'Submit'}
-        className='addTodo'
-      />
+        className={styles.submitButton}
+      >
+        Submit
+      </button>
     </form>
   )
 }
