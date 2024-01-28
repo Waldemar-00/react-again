@@ -1,29 +1,29 @@
-form {
+.addform {
   margin: 0 auto;
 }
-input,
+.addform input,
 button {
   display: inline-block;
   font-size: 1.2rem;
   border-radius: 0.5rem;
   border: none;
 }
-input {
+.addform input {
   width: 17rem;
   height: 2rem;
   margin-right: 1.2rem;
   padding: 0.5rem;
   outline: none;
 }
-button {
+.addform button {
   background-color: #f1f4d8;
   width: 7rem;
   padding: 0.7rem;
   cursor: pointer;
 }
-button:hover {
+.addform button:hover {
   background-color: #f0f5bf;
 }
-button:active {
+.addform button:active {
   width: 7.4rem;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import './TodoForm.module.css'
+import styles from './TodoForm.module.css'
 function TodoForm({ getInputValue }) {
   const [value, setValue] = React.useState('')
   function handleChangeValue(value) {
@@ -15,7 +15,10 @@ function TodoForm({ getInputValue }) {
     if (value.trim() === '') setValue('')
   }
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      className={styles.addform}
+      onSubmit={handleSubmit}
+    >
       <input
         type='text'
         placeholder='Enter new todo'
