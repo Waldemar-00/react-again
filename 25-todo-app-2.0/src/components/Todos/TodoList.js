@@ -11,7 +11,7 @@ function TodoList({ notes, handleDeleteNote }) {
           onDoubleClick={() => handleDeleteNote(note.id)}
         >
           <RiTodoFill className={styles.RiIcon} />
-          {note.text}
+          <div className={styles.text}>{note.text}</div>
           <RiDeleteBin2Line className={styles.Bin} />
           <FaCheck className={styles.Fa} />
         </li>

@@ -7,6 +7,8 @@
   margin-top: 3rem;
 }
 .todoList li {
+  display: flex;
+  align-items: center;
   width: 30rem;
   height: 2rem;
   padding: 0.5rem;
@@ -23,18 +25,17 @@
   margin-right: 5px;
   font-size: 1.7rem;
 }
-
+.text {
+  width: 100%;
+}
 .Bin,
 .Fa {
   color: rgba(0, 0, 0, 0.3);
-  vertical-align: text-bottom;
   cursor: pointer;
-}
-.Bin {
-  margin-left: 14rem;
 }
 .Fa {
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 .Fa:hover {
   color: green;
