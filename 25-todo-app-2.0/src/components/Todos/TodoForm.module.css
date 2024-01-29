@@ -20,10 +20,11 @@ button {
   width: 7rem;
   padding: 0.7rem;
   cursor: pointer;
+  transition: transform 0.2s;
 }
 .addform button:hover {
   background-color: #f0f5bf;
 }
 .addform button:active {
-  width: 7.4rem;
+  transform: scale(1.1);
 }
