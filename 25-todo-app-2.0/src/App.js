@@ -20,7 +20,7 @@ function App() {
   function handleChangeDone(id) {
     setNotes(
       notes.map((note) => {
-        return note.id === id ? { ...note, isDone: !note.isDone } : note
+        return note.id === id ? { ...note, isDone: !note.isDone } : { ...note }
       }),
     )
   }
