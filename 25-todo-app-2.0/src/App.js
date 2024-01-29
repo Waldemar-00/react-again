@@ -1,4 +1,5 @@
 import React from 'react'
+import { v4 } from 'uuid'
 import './App.css'
 import Heading from './components/Header/Heading'
 import TodoForm from './components/Todos/TodoForm'
@@ -6,12 +7,16 @@ import TodoList from './components/Todos/TodoList'
 function App() {
   const [notes, setNotes] = React.useState([])
   function getInputValue(value) {
-    setNotes([...notes, value])
+    const newNote = {
+      text: value,
+      isDone: false,
+      id: v4(),
+    }
+    setNotes([...notes, newNote])
   }
-  function handleDeleteNote(index) {
-    const array = [...notes]
-    array.splice(index, 1)
-    setNotes([...array])
+  function handleDeleteNote(id) {
+    const filteredNotes = notes.filter((note) => note.id !== id)
+    setNotes(filteredNotes)
   }
   return (
     <div className='App'>
