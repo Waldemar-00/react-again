@@ -1,4 +1,5 @@
-import { RiTodoFill } from 'react-icons/ri'
+import { RiTodoFill, RiDeleteBin2Line } from 'react-icons/ri'
+import { FaCheck } from 'react-icons/fa'
 import styles from './TodoList.module.css'
 function TodoList({ notes, handleDeleteNote }) {
   if (!notes.length) return <h2 className={styles.empty}>Todo list is empty</h2>
@@ -9,8 +10,10 @@ function TodoList({ notes, handleDeleteNote }) {
           key={note.id}
           onDoubleClick={() => handleDeleteNote(note.id)}
         >
-          <RiTodoFill className={styles.riIcon} />
+          <RiTodoFill className={styles.RiIcon} />
           {note.text}
+          <RiDeleteBin2Line className={styles.Bin} />
+          <FaCheck className={styles.Fa} />
         </li>
       ))}
     </ul>

@@ -15,8 +15,7 @@ function App() {
     setNotes([...notes, newNote])
   }
   function handleDeleteNote(id) {
-    const filteredNotes = notes.filter((note) => note.id !== id)
-    setNotes(filteredNotes)
+    setNotes(notes.filter((note) => note.id !== id))
   }
   return (
     <div className='App'>
