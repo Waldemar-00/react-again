@@ -19,9 +19,8 @@ function App() {
   }
   function handleChangeDone(id) {
     setNotes(
-      notes.filter((note) => {
-        if (note.id === id) note.isDone = !note.isDone
-        return note
+      notes.map((note) => {
+        return note.id === id ? { ...note, isDone: !note.isDone } : note
       }),
     )
   }
