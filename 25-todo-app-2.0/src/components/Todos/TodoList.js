@@ -7,13 +7,16 @@ function TodoList({ notes, handleDeleteNote }) {
     <ul className={styles.todoList}>
       {notes.map((note) => (
         <li
+          className=''
           key={note.id}
-          onDoubleClick={() => handleDeleteNote(note.id)}
         >
-          <RiTodoFill className={styles.RiIcon} />
+          <RiTodoFill className={styles.RiTodoFill} />
           <div className={styles.text}>{note.text}</div>
-          <RiDeleteBin2Line className={styles.Bin} />
-          <FaCheck className={styles.Fa} />
+          <RiDeleteBin2Line
+            className={styles.RiDeleteBin2Line}
+            onDoubleClick={() => handleDeleteNote(note.id)}
+          />
+          <FaCheck className={styles.FaCheck} />
         </li>
       ))}
     </ul>

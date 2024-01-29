@@ -20,7 +20,7 @@ button {
   width: 7rem;
   padding: 0.7rem;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 .addform button:hover {
   background-color: #f0f5bf;
