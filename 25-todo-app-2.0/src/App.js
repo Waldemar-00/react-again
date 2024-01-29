@@ -17,6 +17,14 @@ function App() {
   function handleDeleteNote(id) {
     setNotes(notes.filter((note) => note.id !== id))
   }
+  function handleChangeDone(id) {
+    setNotes(
+      notes.filter((note) => {
+        if (note.id === id) note.isDone = !note.isDone
+        return note
+      }),
+    )
+  }
   return (
     <div className='App'>
       <Heading />
@@ -25,6 +33,7 @@ function App() {
         className='todoList'
         notes={notes}
         handleDeleteNote={handleDeleteNote}
+        handleChangeDone={handleChangeDone}
       />
     </div>
   )
