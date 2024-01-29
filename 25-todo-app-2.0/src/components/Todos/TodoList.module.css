@@ -43,3 +43,13 @@
 .Bin:hover {
   color: red;
 }
+.done {
+  color: grey;
+  border: 2px solid grey !important;
+  background-color: unset !important;
+}
+.todoList .done .RiIcon,
+.todoList .done .Bin,
+.todoList .done .Fa {
+  color: gray;
+}
