@@ -2,7 +2,6 @@ import { RiTodoFill, RiDeleteBin2Line } from 'react-icons/ri'
 import { FaCheck } from 'react-icons/fa'
 import styles from './TodoList.module.css'
 function TodoList({ notes, handleDeleteNote, handleToggleDone }) {
-  if (!notes.length) return <h2 className={styles.empty}>Todo list is empty</h2>
   return (
     <ul className={styles.todoList}>
       {notes.map((note) => (

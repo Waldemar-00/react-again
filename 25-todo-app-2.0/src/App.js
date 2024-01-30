@@ -35,10 +35,14 @@ function App() {
     <div className='App'>
       <Heading />
       <TodoForm getInputValue={getInputValue} />
-      <TodoActions
-        handleDeleteAllNotes={handleDeleteAllNotes}
-        handleDeleteDoneNotes={handleDeleteDoneNotes}
-      />
+      {notes.length ? (
+        <TodoActions
+          handleDeleteAllNotes={handleDeleteAllNotes}
+          handleDeleteDoneNotes={handleDeleteDoneNotes}
+        />
+      ) : (
+        <h2 className='empty'>Todo list is empty</h2>
+      )}
       <TodoList
         className='todoList'
         notes={notes}
