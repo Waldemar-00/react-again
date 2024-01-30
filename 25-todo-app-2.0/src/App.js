@@ -3,6 +3,7 @@ import { v4 } from 'uuid'
 import './App.css'
 import Heading from './components/Header/Heading'
 import TodoForm from './components/Todos/TodoForm'
+import TodoActions from './components/Todos/TodoActions'
 import TodoList from './components/Todos/TodoList'
 function App() {
   const [notes, setNotes] = React.useState([])
@@ -28,6 +29,7 @@ function App() {
     <div className='App'>
       <Heading />
       <TodoForm getInputValue={getInputValue} />
+      <TodoActions />
       <TodoList
         className='todoList'
         notes={notes}

@@ -21,9 +21,12 @@ button {
   padding: 0.7rem;
   cursor: pointer;
   transition: transform 0.3s;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5);
 }
 .addform button:hover {
   background-color: #f0f5bf;
+  color: rgb(63, 63, 63);
 }
 .addform button:active {
   transform: scale(1.1);
