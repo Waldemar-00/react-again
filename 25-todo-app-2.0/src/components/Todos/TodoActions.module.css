@@ -26,7 +26,15 @@
 .RiRefreshLine {
   font-size: 1.2em;
 }
-.RiDeleteBin2Line:hover,
+.btnAction .RiDeleteBin2Line:hover,
 .RiRefreshLine:hover {
   color: red;
+}
+.btnDisabled {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: #f1f4d8;
+  color: rgba(0, 0, 0, 0.5);
 }

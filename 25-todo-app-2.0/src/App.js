@@ -31,17 +31,19 @@ function App() {
   function handleDeleteDoneNotes() {
     setNotes(notes.filter((note) => note.isDone === false))
   }
+  const amountDoneTodos = notes.filter((note) => note.isDone === true).length
   return (
     <div className='App'>
       <Heading />
       <TodoForm getInputValue={getInputValue} />
       {notes.length ? (
         <TodoActions
+          disabledButton={!!amountDoneTodos}
           handleDeleteAllNotes={handleDeleteAllNotes}
           handleDeleteDoneNotes={handleDeleteDoneNotes}
         />
       ) : (
-        <h2 className='empty'>Todo list is empty</h2>
+        <h2 className='report'>Todo list is empty</h2>
       )}
       <TodoList
         className='todoList'
@@ -49,6 +51,7 @@ function App() {
         handleDeleteNote={handleDeleteNote}
         handleToggleDone={handleToggleDone}
       />
+      {amountDoneTodos ? <h2 className='report'>Quantity done todos {amountDoneTodos}</h2> : null}
     </div>
   )
 }

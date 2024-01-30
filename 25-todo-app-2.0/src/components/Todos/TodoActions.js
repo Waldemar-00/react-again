@@ -1,7 +1,7 @@
 import { RiDeleteBin2Line } from 'react-icons/ri'
 import { RiRefreshLine } from 'react-icons/ri'
 import styles from './TodoActions.module.css'
-function TodoActions({ handleDeleteAllNotes, handleDeleteDoneNotes }) {
+function TodoActions({ handleDeleteAllNotes, handleDeleteDoneNotes, disabledButton }) {
   return (
     <div className={styles.buttonsBlock}>
       <button
@@ -14,12 +14,12 @@ function TodoActions({ handleDeleteAllNotes, handleDeleteDoneNotes }) {
       </button>
       <button
         type='button'
-        className={styles.btnAction}
+        className={!disabledButton ? styles.btnDisabled : styles.btnAction}
         title='clear done todos'
       >
         <RiDeleteBin2Line
           className={styles.RiDeleteBin2Line}
-          onDoubleClick={handleDeleteDoneNotes}
+          onDoubleClick={!disabledButton ? null : handleDeleteDoneNotes}
         />
       </button>
     </div>
