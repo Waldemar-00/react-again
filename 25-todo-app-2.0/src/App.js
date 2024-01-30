@@ -51,7 +51,11 @@ function App() {
         handleDeleteNote={handleDeleteNote}
         handleToggleDone={handleToggleDone}
       />
-      {amountDoneTodos ? <h2 className='report'>Quantity done todos {amountDoneTodos}</h2> : null}
+      {amountDoneTodos ? (
+        <h2 className='report'>
+          You have completed {amountDoneTodos} {amountDoneTodos > 1 ? 'todos' : 'todo'}
+        </h2>
+      ) : null}
     </div>
   )
 }
