@@ -23,10 +23,10 @@
   transform: scale(1.2);
 }
 .RiDeleteBin2Line,
-.FiRefreshCw {
+.RiRefreshLine {
   font-size: 1.2em;
 }
 .RiDeleteBin2Line:hover,
-.FiRefreshCw:hover {
+.RiRefreshLine:hover {
   color: red;
 }

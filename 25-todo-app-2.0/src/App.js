@@ -18,7 +18,7 @@ function App() {
   function handleDeleteNote(id) {
     setNotes(notes.filter((note) => note.id !== id))
   }
-  function handleChangeDone(id) {
+  function handleToggleDone(id) {
     setNotes(
       notes.map((note) => {
         return note.id === id ? { ...note, isDone: !note.isDone } : { ...note }
@@ -43,10 +43,9 @@ function App() {
         className='todoList'
         notes={notes}
         handleDeleteNote={handleDeleteNote}
-        handleChangeDone={handleChangeDone}
+        handleToggleDone={handleToggleDone}
       />
     </div>
   )
 }
-
 export default App

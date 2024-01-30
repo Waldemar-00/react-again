@@ -1,5 +1,5 @@
 import { RiDeleteBin2Line } from 'react-icons/ri'
-import { FiRefreshCw } from 'react-icons/fi'
+import { RiRefreshLine } from 'react-icons/ri'
 import styles from './TodoActions.module.css'
 function TodoActions({ handleDeleteAllNotes, handleDeleteDoneNotes }) {
   return (
@@ -10,7 +10,7 @@ function TodoActions({ handleDeleteAllNotes, handleDeleteDoneNotes }) {
         onDoubleClick={handleDeleteAllNotes}
         title='clear all todos'
       >
-        <FiRefreshCw className={styles.FiRefreshCw}></FiRefreshCw>
+        <RiRefreshLine className={styles.RiRefreshLine}></RiRefreshLine>
       </button>
       <button
         type='button'
