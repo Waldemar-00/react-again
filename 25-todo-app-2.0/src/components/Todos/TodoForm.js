@@ -27,7 +27,12 @@ function TodoForm({ getInputValue }) {
         onChange={(e) => handleChangeValue(e.target.value)}
         onBlur={(e) => handleBlur(e.target.value)}
       />
-      <button type='submit'>Submit</button>
+      <button
+        type='submit'
+        title='add to list'
+      >
+        Submit
+      </button>
     </form>
   )
 }

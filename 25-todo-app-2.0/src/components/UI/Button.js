@@ -1,11 +1,11 @@
 import styles from './Button.module.css'
-function Button({ text, className, type }) {
+function Button({ children, className, type }) {
   return (
     <button
       type={type}
       className={styles[className]}
     >
-      {text}
+      {children}
     </button>
   )
 }

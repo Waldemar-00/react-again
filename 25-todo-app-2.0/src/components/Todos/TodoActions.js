@@ -8,12 +8,14 @@ function TodoActions({ handleDeleteAllNotes, handleDeleteDoneNotes }) {
         type='button'
         className={styles.btnAction}
         onDoubleClick={handleDeleteAllNotes}
+        title='clear all todos'
       >
         <FiRefreshCw className={styles.FiRefreshCw}></FiRefreshCw>
       </button>
       <button
         type='button'
         className={styles.btnAction}
+        title='clear done todos'
       >
         <RiDeleteBin2Line
           className={styles.RiDeleteBin2Line}

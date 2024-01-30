@@ -15,10 +15,12 @@ function TodoList({ notes, handleDeleteNote, handleChangeDone }) {
           <RiDeleteBin2Line
             className={styles.RiDeleteBin2Line}
             onDoubleClick={() => handleDeleteNote(note.id)}
+            title='delete one todo'
           />
           <FaCheck
             className={styles.FaCheck}
             onClick={() => handleChangeDone(note.id)}
+            title='toggle todo done'
           />
         </li>
       ))}
