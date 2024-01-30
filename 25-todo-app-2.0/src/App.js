@@ -25,11 +25,20 @@ function App() {
       }),
     )
   }
+  function handleDeleteAllNotes() {
+    setNotes([])
+  }
+  function handleDeleteDoneNotes() {
+    setNotes(notes.filter((note) => note.isDone === false))
+  }
   return (
     <div className='App'>
       <Heading />
       <TodoForm getInputValue={getInputValue} />
-      <TodoActions />
+      <TodoActions
+        handleDeleteAllNotes={handleDeleteAllNotes}
+        handleDeleteDoneNotes={handleDeleteDoneNotes}
+      />
       <TodoList
         className='todoList'
         notes={notes}
