@@ -18,6 +18,10 @@ function App() {
             path='contacts'
             element={<h2>Contacts page</h2>}
           />
+          <Route
+            path='*'
+            element={<h2>Not found 404</h2>}
+          />
         </Routes>
       </div>
     </BrowserRouter>
