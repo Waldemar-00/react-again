@@ -1,5 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Home from './components/Home'
+import About from './components/About'
+import Contacts from './components/Contacts'
+import NotFound404 from './components/NotFound404'
 
 function App() {
   return (
@@ -8,19 +12,19 @@ function App() {
         <Routes>
           <Route
             path='/'
-            element={<h1>Home page</h1>}
+            element={<Home />}
           />
           <Route
             path='about'
-            element={<h2>About page</h2>}
+            element={<About />}
           />
           <Route
             path='contacts'
-            element={<h2>Contacts page</h2>}
+            element={<Contacts />}
           />
           <Route
             path='*'
-            element={<h2>Not found 404</h2>}
+            element={<NotFound404 />}
           />
         </Routes>
       </div>
