@@ -1,7 +1,8 @@
 .App {
   text-align: center;
 }
-h1 {
+h1,
+h2 {
   font-size: 3em;
   margin: 1.3rem;
   color: #08bf94ff;
