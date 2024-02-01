@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header'
+import MainLayout from './components/MainLayout'
 import Home from './components/Home'
 import Other from './components/Other'
 import About from './components/About'
@@ -11,29 +11,15 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Header />
+        {/* <Header /> */}
         <Routes>
-          <Route
-            path='/'
-            element={<Home />}
-          >
-            <Route
-              path='other'
-              element={<Other />}
-            />
+          <Route path='/' element={<MainLayout />}>
+            <Route index element={<Home />} />
+            <Route path='other' element={<Other />} />
+            <Route path='about' element={<About />} />
+            <Route path='contacts' element={<Contacts />} />
+            <Route path='*' element={<NotFound404 />} />
           </Route>
-          <Route
-            path='about'
-            element={<About />}
-          />
-          <Route
-            path='contacts'
-            element={<Contacts />}
-          />
-          <Route
-            path='*'
-            element={<NotFound404 />}
-          />
         </Routes>
       </div>
     </BrowserRouter>
