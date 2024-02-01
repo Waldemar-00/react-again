@@ -1,15 +1,17 @@
+import { Link } from 'react-router-dom'
+
 const NotFound404 = () => {
   return (
     <>
       <h2>Not found 404</h2>
       <h3>
-        <a href='/'>Home</a>
+        <Link to='/'>Home</Link>
       </h3>
       <h3>
-        <a href='./about'>About</a>
+        <Link to='/about'>About</Link>
       </h3>
       <h3>
-        <a href='./contacts'>Contacts</a>
+        <Link to='/contacts'>Contacts</Link>
       </h3>
     </>
   )

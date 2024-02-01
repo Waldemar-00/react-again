@@ -1,12 +1,14 @@
+import { Link } from 'react-router-dom'
+
 const Contacts = () => {
   return (
     <>
       <h2>Contacts</h2>
       <h3>
-        <a href='./about'>About</a>
+        <Link to='/about'>About</Link>
       </h3>
       <h3>
-        <a href='/'>Home</a>
+        <Link to='/'>Home</Link>
       </h3>
     </>
   )
