@@ -7,6 +7,13 @@ h2 {
   margin: 1.3rem;
   color: #08bf94ff;
 }
+h3 {
+  margin-bottom: 0.7rem;
+}
+h3 a {
+  color: white;
+  text-decoration: none;
+}
 button {
   padding: 1rem;
   font-size: 1.5rem;
