@@ -15,9 +15,10 @@ function App() {
         <Routes>
           <Route path='/' element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path='other' element={<Other />} />
-            <Route path='about' element={<About />} />
-            <Route path='contacts' element={<Contacts />} />
+            <Route path='/about' element={<About />}>
+              <Route path='/about/other' element={<Other />} />
+            </Route>
+            <Route path='/contacts' element={<Contacts />} />
             <Route path='*' element={<NotFound404 />} />
           </Route>
         </Routes>
