@@ -30,3 +30,7 @@ nav {
   height: 3rem;
   background-color: rgb(15, 115, 148);
 }
+.active {
+  color: yellow;
+  font-style: italic;
+}
