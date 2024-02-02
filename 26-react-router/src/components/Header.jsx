@@ -6,8 +6,8 @@ const Header = () => {
       <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/about'>
         About
       </NavLink>
-      <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/about/other'>
-        Other
+      <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/courses'>
+        Courses
       </NavLink>
       <NavLink style={({ isActive }) => (isActive ? { color: ' yellow', fontStyle: 'italic' } : {})} to='/contacts'>
         Contacts
