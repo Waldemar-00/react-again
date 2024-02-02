@@ -34,3 +34,17 @@ nav {
   color: yellow;
   font-style: italic;
 }
+ul {
+  list-style: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
+}
+li {
+  margin-bottom: 0.7rem;
+}
+article {
+  margin-top: 3rem;
+  color: yellow;
+}
