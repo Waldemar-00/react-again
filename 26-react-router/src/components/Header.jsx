@@ -2,16 +2,14 @@ import { NavLink } from 'react-router-dom'
 const Header = () => {
   return (
     <nav>
-      <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/'>
-        Home
-      </NavLink>
+      <NavLink to='/'>Home</NavLink>
       <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/about'>
         About
       </NavLink>
       <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/about/other'>
         Other
       </NavLink>
-      <NavLink className={({ isActive }) => (isActive ? 'active' : '')} to='/contacts'>
+      <NavLink style={({ isActive }) => (isActive ? { color: ' yellow', fontStyle: 'italic' } : {})} to='/contacts'>
         Contacts
       </NavLink>
     </nav>
