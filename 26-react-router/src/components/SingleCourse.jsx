@@ -9,7 +9,7 @@ const SingleCourse = () => {
   const foundElement = courses.find((course) => course.slug === slug)
   // const content = foundElement ? foundElement.description : null
   useEffect(() => {
-    if (!foundElement) navigate('..', { relative: 'path' }) // or '/courses'
+    if (!foundElement) navigate('../../not-found', { relative: 'route' }) // or '/courses'
   }, [foundElement, navigate])
   // const content = foundElement ? (
   //   foundElement.description
