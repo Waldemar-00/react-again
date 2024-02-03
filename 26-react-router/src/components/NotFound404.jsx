@@ -1,2 +1,2 @@
-const NotFound404 = () => <h2>NOT FOUND 404</h2>
+const NotFound404 = ({ className = '', text = 'NOT FOUND PAGE' }) => <h2 className={className}>{text}</h2>
 export default NotFound404

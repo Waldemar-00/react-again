@@ -7,6 +7,11 @@ h2 {
   margin: 1.3rem;
   color: #08bf94ff;
 }
+.coursesNotfound {
+  margin-top: 3rem;
+  color: yellow;
+  font-size: 1.5em;
+}
 a {
   color: white;
   text-decoration: none;
