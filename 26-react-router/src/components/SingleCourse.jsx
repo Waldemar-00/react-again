@@ -7,7 +7,7 @@ const SingleCourse = () => {
   const { slug } = useParams()
   const navigate = useNavigate()
   const foundElement = courses.find((course) => course.slug === slug)
-  const content = foundElement ? foundElement.description : null
+  // const content = foundElement ? foundElement.description : null
   useEffect(() => {
     if (!foundElement) navigate('..', { relative: 'path' }) // or '/courses'
   }, [foundElement, navigate])
@@ -18,7 +18,7 @@ const SingleCourse = () => {
   // )
   return (
     <article>
-      <div>{content}</div>
+      <div>{foundElement?.description}</div>
     </article>
   )
 }
