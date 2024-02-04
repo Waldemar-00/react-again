@@ -1,9 +1,9 @@
 import UserInfo from './UserInfo'
 
-const User = ({ name }) => {
+const User = () => {
   return (
     <div>
-      <UserInfo name={name} />
+      <UserInfo />
     </div>
   )
 }
