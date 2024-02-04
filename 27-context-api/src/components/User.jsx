@@ -1,10 +1,11 @@
 import UserInfo from './UserInfo'
+import UserContext from '../context/UserContext'
 
 const User = () => {
   return (
-    <div>
+    <UserContext.Provider value='WALDEMAR'>
       <UserInfo />
-    </div>
+    </UserContext.Provider>
   )
 }
 
