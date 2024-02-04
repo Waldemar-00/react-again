@@ -6,11 +6,11 @@ function App() {
   const [userName, setUserName] = useState('ULADZIMIR')
 
   return (
-    <UserContext.Provider value={userName}>
-      <div className='App'>
-        <User />
-      </div>
-    </UserContext.Provider>
+    // <UserContext.Provider value={userName}>
+    <div className='App'>
+      <User />
+    </div>
+    // </UserContext.Provider>
   )
 }
 
