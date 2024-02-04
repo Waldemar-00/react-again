@@ -3,7 +3,7 @@ import UserContext from '../context/UserContext'
 
 const UserInfo = () => {
   const context = useContext(UserContext)
-  return <h2>{context}</h2>
+  return <h2>{context.userName}</h2>
   // return <UserContext.Consumer>{(value) => <h2>{value}</h2>}</UserContext.Consumer>
 }
 
