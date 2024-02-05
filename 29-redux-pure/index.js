@@ -1,1 +1,2 @@
-console.log('Hello Redux')
+import store from './redux/store.js'
+console.log(store)
