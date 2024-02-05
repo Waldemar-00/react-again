@@ -1,15 +1,25 @@
 const prevState = []
 function reducer(state, action) {
-  if (action.type === 'ADD_NAME') {
-    return [...state, action.payload]
+  switch (action.type) {
+    case 'ADD_NAME':
+      return [...state, action.payload]
+    case 'REMOVE_NAME':
+      return state.filter((name) => action.payload !== name)
+    case 'CLEAR_NAMES':
+      return []
+    default:
+      return state
   }
-  if (action.type === 'DELETE_NAME') {
-    return state.filter((name) => action.payload !== name)
-  }
-  if (action.type === 'CLEAR_NAMES') {
-    return []
-  }
-  return state
+  // if (action.type === 'ADD_NAME') {
+  //   return [...state, action.payload]
+  // }
+  // if (action.type === 'DELETE_NAME') {
+  //   return state.filter((name) => action.payload !== name)
+  // }
+  // if (action.type === 'CLEAR_NAMES') {
+  //   return []
+  // }
+  // return state
 }
 let newState = reducer(prevState, { type: 'ADD_NAME', payload: 'Bogdan' })
 console.log(newState)
