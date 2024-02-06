@@ -16,7 +16,7 @@ document
 
 document.querySelector('#btnDel').addEventListener('click', () => {
   store.dispatch({ type: 'CLEAR_ALL_TIMES' })
-  document.querySelectorAll('section div').forEach((item) => {
-    item.parentNode.removeChild(item)
-  })
+  // document.querySelectorAll('section div').forEach((item) => {
+  //   item.parentNode.removeChild(item)
+  // })
 })
