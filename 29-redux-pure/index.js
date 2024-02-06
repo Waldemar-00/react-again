@@ -1,4 +1,5 @@
 import store from './redux/store.js'
+import getCurrentTime from './utils/getCurrentTime.js'
 
 const unsubscribe = store.subscribe(() => {
   const storeArray = store.getState()
@@ -10,7 +11,7 @@ const unsubscribe = store.subscribe(() => {
 
 document
   .querySelector('#btnAdd')
-  .addEventListener('click', () => store.dispatch({ type: 'ADD_CURRENT_TIME', payload: Date.now() }))
+  .addEventListener('click', () => store.dispatch({ type: 'ADD_CURRENT_TIME', payload: getCurrentTime() }))
 
 document.querySelector('#btnDel').addEventListener('click', () => {
   store.dispatch({ type: 'CLEAR_ALL_TIMES' })
