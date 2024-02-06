@@ -3,6 +3,7 @@ import getCurrentTime from './utils/getCurrentTime.js'
 
 const unsubscribe = store.subscribe(() => {
   const storeArray = store.getState()
+  document.querySelector('section').innerHTML = ''
   storeArray.map((item, index) => {
     document.querySelector('section').append(document.createElement('div'))
     document.querySelectorAll('div')[index].innerText = item
