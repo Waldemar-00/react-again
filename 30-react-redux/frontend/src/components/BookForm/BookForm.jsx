@@ -2,7 +2,7 @@ import React from 'react'
 import './BookForm.css'
 import { useDispatch } from 'react-redux'
 import { v4 } from 'uuid'
-import { addBook } from '../../redux/books/actionCreators'
+import * as aC from '../../redux/books/actionCreators'
 
 const BookForm = () => {
   const [title, setTitle] = React.useState('')
@@ -12,7 +12,7 @@ const BookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (title && author) {
-      dispatch(addBook({ title, author, id: v4() }))
+      dispatch(aC.addBook({ title, author, id: v4() }))
       setTitle('')
       setAuthor('')
     }

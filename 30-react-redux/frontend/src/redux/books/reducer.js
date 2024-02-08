@@ -1,9 +1,11 @@
-import { ADD_BOOK } from './actionTypes'
+import * as aT from './actionTypes'
 
 const bookReducer = (state = [], action) => {
   switch (action.type) {
-    case ADD_BOOK:
+    case aT.ADD_BOOK:
       return [...state, action.payload]
+    case aT.DEL_BOOK:
+      return [...action.payload]
     default:
       return state
   }
