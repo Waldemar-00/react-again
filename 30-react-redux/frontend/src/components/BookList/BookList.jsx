@@ -6,8 +6,7 @@ const BookList = () => {
   const books = useSelector((state) => state.books, shallowEqual)
   const dispatch = useDispatch()
   const handleDeleteBook = (id) => {
-    const bookRest = books.filter((book) => book.id !== id)
-    dispatch(aC.delBook(bookRest))
+    dispatch(aC.delBook(id))
   }
   return (
     <div className='app-block book-list'>
