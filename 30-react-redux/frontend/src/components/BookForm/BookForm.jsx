@@ -5,20 +5,20 @@ import { v4 } from 'uuid'
 import { addBook } from '../../redux/books/actionCreators'
 
 const BookForm = () => {
-  const [bookTitle, setBookTitle] = React.useState('')
+  const [title, setTitle] = React.useState('')
   const [author, setAuthor] = React.useState('')
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (bookTitle && author) {
-      dispatch(addBook({ bookTitle, author, id: v4() }))
-      setBookTitle('')
+    if (title && author) {
+      dispatch(addBook({ title, author, id: v4() }))
+      setTitle('')
       setAuthor('')
     }
   }
   const handleBookTitleChange = (e) => {
-    setBookTitle(e.target.value)
+    setTitle(e.target.value)
   }
   const handleAuthorChange = (e) => {
     setAuthor(e.target.value)
@@ -29,7 +29,7 @@ const BookForm = () => {
       <form className='book-form' onSubmit={handleSubmit}>
         <div>
           <label htmlFor='bookTitle'>Book title:</label>
-          <input id='bookTitle' type='text' value={bookTitle} onChange={handleBookTitleChange} />
+          <input id='bookTitle' type='text' value={title} onChange={handleBookTitleChange} />
         </div>
         <div>
           <label htmlFor='author'>Author:</label>

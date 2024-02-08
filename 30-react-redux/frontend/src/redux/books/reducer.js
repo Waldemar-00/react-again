@@ -1,6 +1,6 @@
 import { ADD_BOOK } from './actionTypes'
-const initialState = []
-const bookReducer = (state = initialState, action) => {
+
+const bookReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload]
