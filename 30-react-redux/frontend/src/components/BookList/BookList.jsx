@@ -22,9 +22,11 @@ const BookList = () => {
                 <div className='book-info'>
                   {++index}. {book.title} by <strong>{book.author}</strong>
                 </div>
-                <button type='button' onDoubleClick={() => handleDeleteBook(book.id)}>
-                  Del
-                </button>
+                <div className='book-actions'>
+                  <button type='button' onDoubleClick={() => handleDeleteBook(book.id)}>
+                    Del
+                  </button>
+                </div>
               </li>
             )
           })
