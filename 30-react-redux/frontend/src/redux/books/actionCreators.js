@@ -6,3 +6,6 @@ export const addBook = (newBook) => {
 export const delBook = (id) => {
   return { type: aT.DEL_BOOK, payload: id }
 }
+export const addRandomBook = (randomBook) => {
+  return { type: aT.ADD_RANDOM_BOOK, payload: randomBook }
+}

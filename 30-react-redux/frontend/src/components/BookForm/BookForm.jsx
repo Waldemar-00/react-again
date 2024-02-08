@@ -3,6 +3,7 @@ import './BookForm.css'
 import { useDispatch } from 'react-redux'
 import { v4 } from 'uuid'
 import * as aC from '../../redux/books/actionCreators'
+import randomBooks from '../../data/books.json'
 
 const BookForm = () => {
   const [title, setTitle] = React.useState('')
@@ -23,6 +24,10 @@ const BookForm = () => {
   const handleAuthorChange = (e) => {
     setAuthor(e.target.value)
   }
+  const handleAddRandomBook = () => {
+    const index = Math.floor(Math.random() * randomBooks.length)
+    dispatch(aC.addRandomBook({ ...randomBooks[index], id: v4() }))
+  }
   return (
     <div className='app-block book-form'>
       <h2>Add a new book</h2>
@@ -36,6 +41,9 @@ const BookForm = () => {
           <input id='author' type='text' value={author} onChange={handleAuthorChange} />
         </div>
         <button type='submit'>Add Book</button>
+        <button type='button' onClick={handleAddRandomBook}>
+          Add random Book
+        </button>
       </form>
     </div>
   )
