@@ -9,3 +9,6 @@ export const delBook = (id) => {
 export const addRandomBook = (randomBook) => {
   return { type: aT.ADD_RANDOM_BOOK, payload: randomBook }
 }
+export const changeFavorite = (id) => {
+  return { type: aT.CHANGE_FAVORITE, payload: id }
+}

@@ -13,7 +13,7 @@ const BookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (title && author) {
-      dispatch(aC.addBook({ title, author, id: v4() }))
+      dispatch(aC.addBook({ title, author, id: v4(), isFavorite: false }))
       setTitle('')
       setAuthor('')
     }
@@ -26,7 +26,7 @@ const BookForm = () => {
   }
   const handleAddRandomBook = () => {
     const index = Math.floor(Math.random() * randomBooks.length)
-    dispatch(aC.addRandomBook({ ...randomBooks[index], id: v4() }))
+    dispatch(aC.addRandomBook({ ...randomBooks[index], id: v4(), isFavorite: false }))
   }
   return (
     <div className='app-block book-form'>
