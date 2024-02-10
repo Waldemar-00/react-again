@@ -5,6 +5,7 @@ import './Filter.css'
 const Filter = () => {
   const dispatch = useDispatch()
   const title = useSelector((state) => state.filter.title)
+  const author = useSelector((state) => state.filter.author)
   const handleResetFiters = () => {
     dispatch(filterSlice.actions.resetFilters())
   }
@@ -17,6 +18,14 @@ const Filter = () => {
             placeholder='Filter by title...'
             value={title}
             onChange={(e) => dispatch(filterSlice.actions.setTitleFilter(e.target.value))}
+          />
+        </div>
+        <div className='filter-group'>
+          <input
+            type='text'
+            placeholder='Filter by author...'
+            value={author}
+            onChange={(e) => dispatch(filterSlice.actions.setAuthorFilter(e.target.value))}
           />
         </div>
         <button type='button' onClick={handleResetFiters}>

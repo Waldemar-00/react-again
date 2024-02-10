@@ -7,7 +7,7 @@ import './BookList.css'
 const BookList = () => {
   const books = useSelector((state) => state.books, shallowEqual)
   const filterTitle = useSelector((state) => state.filter.title)
-  console.log(filterTitle)
+  const filterAuthor = useSelector((state) => state.filter.author)
   const dispatch = useDispatch()
   const handleDeleteBook = (id) => {
     dispatch(aC.delBook(id))
@@ -17,6 +17,8 @@ const BookList = () => {
   }
   const filteredBooks = filterTitle //for optimisation
     ? books.filter((book) => book.title.toLowerCase().includes(filterTitle.toLowerCase()))
+    : filterAuthor
+    ? books.filter((book) => book.author.toLowerCase().includes(filterAuthor.toLowerCase()))
     : books
   return (
     <div className='app-block book-list'>
