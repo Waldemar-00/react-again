@@ -15,7 +15,7 @@ const BookList = () => {
   const handleChangeFavorite = (id) => {
     dispatch(aC.changeFavorite(id))
   }
-  const filteredBooks = filterTitle
+  const filteredBooks = filterTitle //for optimisation
     ? books.filter((book) => book.title.toLowerCase().includes(filterTitle.toLowerCase()))
     : books
   return (

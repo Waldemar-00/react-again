@@ -7,6 +7,7 @@ const filterSlice = createSlice({
   },
   reducers: {
     setTitleFilter: (state, action) => ({ ...state, title: action.payload }),
+    resetFilters: (state) => ({ ...state, title: '' }),
   },
 })
 export default filterSlice
