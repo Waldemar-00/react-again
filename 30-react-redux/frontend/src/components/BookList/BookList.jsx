@@ -6,6 +6,8 @@ import './BookList.css'
 
 const BookList = () => {
   const books = useSelector((state) => state.books, shallowEqual)
+  const filterTitle = useSelector((state) => state.filter.title)
+  console.log(filterTitle)
   const dispatch = useDispatch()
   const handleDeleteBook = (id) => {
     dispatch(aC.delBook(id))
@@ -13,14 +15,17 @@ const BookList = () => {
   const handleChangeFavorite = (id) => {
     dispatch(aC.changeFavorite(id))
   }
+  const filteredBooks = filterTitle
+    ? books.filter((book) => book.title.toLowerCase().includes(filterTitle.toLowerCase()))
+    : books
   return (
     <div className='app-block book-list'>
       <h2>Book List</h2>
       <ul>
-        {books.length === 0 ? (
+        {filteredBooks.length === 0 ? (
           <li style={{ justifyContent: 'center' }}>No books available</li>
         ) : (
-          books.map((book, index) => {
+          filteredBooks.map((book, index) => {
             return (
               <li key={book.id}>
                 <div className='book-info'>
