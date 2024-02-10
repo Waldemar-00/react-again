@@ -15,10 +15,18 @@ const BookList = () => {
   const handleChangeFavorite = (id) => {
     dispatch(aC.changeFavorite(id))
   }
-  const filteredBooks = filterTitle //for optimisation
-    ? books.filter((book) => book.title.toLowerCase().includes(filterTitle.toLowerCase()))
+  const filteredBooks = filterTitle
+    ? books.filter(
+        (book) =>
+          book.title.toLowerCase().includes(filterTitle.toLowerCase()) &&
+          book.author.toLowerCase().includes(filterAuthor.toLowerCase()),
+      )
     : filterAuthor
-    ? books.filter((book) => book.author.toLowerCase().includes(filterAuthor.toLowerCase()))
+    ? books.filter(
+        (book) =>
+          book.author.toLowerCase().includes(filterAuthor.toLowerCase()) &&
+          book.title.toLowerCase().includes(filterTitle.toLowerCase()),
+      )
     : books
   return (
     <div className='app-block book-list'>
