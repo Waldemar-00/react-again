@@ -1,7 +1,8 @@
 import React from 'react'
 import { BsBookmarkStar, BsBookmarkStarFill } from 'react-icons/bs'
 import { shallowEqual, useSelector, useDispatch } from 'react-redux'
-import * as aC from '../../redux/books/actionCreators'
+// import * as aC from '../../redux/books/actionCreators'
+import booksSlice from '../../redux/slices/booksSlice'
 import './BookList.css'
 
 const BookList = () => {
@@ -11,10 +12,10 @@ const BookList = () => {
   const filterFavorite = useSelector((state) => state.filter.favorite)
   const dispatch = useDispatch()
   const handleDeleteBook = (id) => {
-    dispatch(aC.delBook(id))
+    dispatch(booksSlice.actions.delBook(id))
   }
   const handleChangeFavorite = (id) => {
-    dispatch(aC.changeFavorite(id))
+    dispatch(booksSlice.actions.changeFavorite(id))
   }
   const filteredBooks = books.filter(
     (book) =>
