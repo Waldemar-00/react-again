@@ -22,6 +22,20 @@ const BookList = () => {
       book.author.toLowerCase().includes(filterAuthor.toLowerCase()) &&
       (filterFavorite ? book.isFavorite : true),
   )
+  const highlighter = (text, filter) => {
+    if (!filter) return text
+    const regExp = new RegExp(`(${filter})`, 'gi')
+    return text.split(regExp).map((subStr, index) => {
+      if (subStr.toLowerCase() === filter.toLowerCase()) {
+        return (
+          <span key={index} className='highlight'>
+            {subStr}
+          </span>
+        )
+      }
+      return subStr
+    })
+  }
   return (
     <div className='app-block book-list'>
       <h2>Book List</h2>
@@ -33,7 +47,8 @@ const BookList = () => {
             return (
               <li key={book.id}>
                 <div className='book-info'>
-                  {++index}. {book.title} by <strong>{book.author}</strong>
+                  {++index}. {highlighter(book.title, filterTitle)} by{' '}
+                  <strong>{highlighter(book.author, filterAuthor)}</strong>
                 </div>
                 <div className='book-actions'>
                   <span onClick={() => handleChangeFavorite(book.id)}>
