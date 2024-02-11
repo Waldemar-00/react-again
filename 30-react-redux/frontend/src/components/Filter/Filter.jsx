@@ -6,6 +6,7 @@ const Filter = () => {
   const dispatch = useDispatch()
   const title = useSelector((state) => state.filter.title)
   const author = useSelector((state) => state.filter.author)
+  const favorite = useSelector((state) => state.filter.favorite)
   const handleResetFiters = () => {
     dispatch(filterSlice.actions.resetFilters())
   }
@@ -27,6 +28,16 @@ const Filter = () => {
             value={author}
             onChange={(e) => dispatch(filterSlice.actions.setAuthorFilter(e.target.value))}
           />
+        </div>
+        <div className='filter-group'>
+          <label>
+            <input
+              type='checkbox'
+              checked={favorite}
+              onChange={() => dispatch(filterSlice.actions.setFavoriteFilter())}
+            />
+            Favorite
+          </label>
         </div>
         <button type='button' onClick={handleResetFiters}>
           Reset Filters

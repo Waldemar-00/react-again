@@ -8,6 +8,7 @@ const BookList = () => {
   const books = useSelector((state) => state.books, shallowEqual)
   const filterTitle = useSelector((state) => state.filter.title)
   const filterAuthor = useSelector((state) => state.filter.author)
+  const filterFavorite = useSelector((state) => state.filter.favorite)
   const dispatch = useDispatch()
   const handleDeleteBook = (id) => {
     dispatch(aC.delBook(id))
@@ -15,18 +16,12 @@ const BookList = () => {
   const handleChangeFavorite = (id) => {
     dispatch(aC.changeFavorite(id))
   }
-  const filteredBooks =
-    filterTitle && filterAuthor
-      ? books.filter(
-          (book) =>
-            book.title.toLowerCase().includes(filterTitle.toLowerCase()) &&
-            book.author.toLowerCase().includes(filterAuthor.toLowerCase()),
-        )
-      : filterTitle
-      ? books.filter((book) => book.title.toLowerCase().includes(filterTitle.toLowerCase()))
-      : filterAuthor
-      ? books.filter((book) => book.author.toLowerCase().includes(filterAuthor.toLowerCase()))
-      : books
+  const filteredBooks = books.filter(
+    (book) =>
+      book.title.toLowerCase().includes(filterTitle.toLowerCase()) &&
+      book.author.toLowerCase().includes(filterAuthor.toLowerCase()) &&
+      (filterFavorite ? book.isFavorite : true),
+  )
   return (
     <div className='app-block book-list'>
       <h2>Book List</h2>

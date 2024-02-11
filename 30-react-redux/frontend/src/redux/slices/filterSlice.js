@@ -1,15 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
-
+const initialState = {
+  title: '',
+  author: '',
+  favorite: false,
+}
 const filterSlice = createSlice({
   name: 'filter',
-  initialState: {
-    title: '',
-    author: '',
-  },
+  initialState,
   reducers: {
     setTitleFilter: (state, action) => ({ ...state, title: action.payload }),
     setAuthorFilter: (state, action) => ({ ...state, author: action.payload }),
-    resetFilters: (state) => ({ ...state, title: '', author: '' }),
+    setFavoriteFilter: (state) => ({ ...state, favorite: !state.favorite }),
+    resetFilters: () => initialState,
   },
 })
 export default filterSlice
