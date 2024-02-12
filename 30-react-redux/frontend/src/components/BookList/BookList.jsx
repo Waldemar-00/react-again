@@ -49,7 +49,7 @@ const BookList = () => {
               <li key={book.id}>
                 <div className='book-info'>
                   {++index}. {highlighter(book.title, filterTitle)} by{' '}
-                  <strong>{highlighter(book.author, filterAuthor)}</strong>
+                  <strong>{highlighter(book.author, filterAuthor)}</strong> ({book.sourse})
                 </div>
                 <div className='book-actions'>
                   <span onClick={() => handleChangeFavorite(book.id)}>

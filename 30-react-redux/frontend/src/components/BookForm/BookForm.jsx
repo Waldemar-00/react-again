@@ -14,7 +14,7 @@ const BookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (title && author) {
-      dispatch(booksSlice.actions.addBook(createBookWithId({ title, author })))
+      dispatch(booksSlice.actions.addBook(createBookWithId({ title, author }, 'manually')))
       setTitle('')
       setAuthor('')
     }
@@ -27,13 +27,13 @@ const BookForm = () => {
   }
   const handleAddRandomBook = () => {
     const index = Math.floor(Math.random() * randomBooks.length)
-    dispatch(booksSlice.actions.addRandomBook(createBookWithId(randomBooks[index])))
+    dispatch(booksSlice.actions.addRandomBook(createBookWithId(randomBooks[index], 'random')))
   }
   const handleGetBookViaAPI = async () => {
     try {
       const response = await axios.get('http://localhost:4000/random-book')
       if (response?.data?.title && response?.data?.author)
-        dispatch(booksSlice.actions.addBook(createBookWithId(response.data)))
+        dispatch(booksSlice.actions.addBook(createBookWithId(response.data, 'api')))
     } catch (error) {
       console.error(error)
     }
