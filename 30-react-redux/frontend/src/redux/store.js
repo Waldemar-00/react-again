@@ -1,14 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import bookReducer from './books/reducer'
-import filterSlice from './slices/filterSlice'
-import booksSlice from './slices/booksSlice'
+import filter from './slices/filterSlice'
+import books from './slices/booksSlice'
+import error from './slices/errorSlice'
 
 const store = configureStore({
   reducer: {
-    // books: bookReducer,
-    books: booksSlice.reducer,
-    filter: filterSlice.reducer,
-    favorite: filterSlice.reducer,
+    books: books.reducer,
+    filter: filter.reducer,
+    error: error.reducer,
   },
 })
 export default store

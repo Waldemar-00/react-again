@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import booksSlice from '../../redux/slices/booksSlice'
+import books from '../../redux/slices/booksSlice'
 import randomBooks from '../../data/books.json'
 import createBookWithId from '../../utils/createBookWithId'
 import { fetchBook } from '../../redux/slices/booksSlice'
@@ -14,7 +14,7 @@ const BookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (title && author) {
-      dispatch(booksSlice.actions.addBook(createBookWithId({ title, author }, 'manually')))
+      dispatch(books.actions.addBook(createBookWithId({ title, author }, 'manually')))
       setTitle('')
       setAuthor('')
     }
@@ -27,7 +27,7 @@ const BookForm = () => {
   }
   const handleAddRandomBook = () => {
     const index = Math.floor(Math.random() * randomBooks.length)
-    dispatch(booksSlice.actions.addRandomBook(createBookWithId(randomBooks[index], 'random')))
+    dispatch(books.actions.addRandomBook(createBookWithId(randomBooks[index], 'random')))
   }
   const handleGetBookViaAPI = () => {
     dispatch(fetchBook())

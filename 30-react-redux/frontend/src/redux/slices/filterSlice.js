@@ -4,7 +4,7 @@ const initialState = {
   author: '',
   favorite: false,
 }
-const filterSlice = createSlice({
+const filter = createSlice({
   name: 'filter',
   initialState,
   reducers: {
@@ -14,4 +14,4 @@ const filterSlice = createSlice({
     resetFilters: () => initialState,
   },
 })
-export default filterSlice
+export default filter

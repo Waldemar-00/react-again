@@ -7,7 +7,7 @@ export const fetchBook = createAsyncThunk('books/fetchBook', async () => {
   return res.data
 })
 
-const booksSlice = createSlice({
+const books = createSlice({
   name: 'books',
   initialState: [],
   reducers: {
@@ -35,4 +35,4 @@ const booksSlice = createSlice({
 //   }
 // }
 
-export default booksSlice
+export default books

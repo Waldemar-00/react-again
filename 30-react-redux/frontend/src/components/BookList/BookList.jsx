@@ -2,22 +2,22 @@ import React from 'react'
 import { BsBookmarkStar, BsBookmarkStarFill } from 'react-icons/bs'
 import { shallowEqual, useSelector, useDispatch } from 'react-redux'
 // import * as aC from '../../redux/books/actionCreators'
-import booksSlice from '../../redux/slices/booksSlice'
+import books from '../../redux/slices/booksSlice'
 import './BookList.css'
 
 const BookList = () => {
-  const books = useSelector((state) => state.books, shallowEqual)
+  const bookState = useSelector((state) => state.books, shallowEqual)
   const filterTitle = useSelector((state) => state.filter.title)
   const filterAuthor = useSelector((state) => state.filter.author)
   const filterFavorite = useSelector((state) => state.filter.favorite)
   const dispatch = useDispatch()
   const handleDeleteBook = (id) => {
-    dispatch(booksSlice.actions.delBook(id))
+    dispatch(books.actions.delBook(id))
   }
   const handleChangeFavorite = (id) => {
-    dispatch(booksSlice.actions.changeFavorite(id))
+    dispatch(books.actions.changeFavorite(id))
   }
-  const filteredBooks = books.filter(
+  const filteredBooks = bookState.filter(
     (book) =>
       book.title.toLowerCase().includes(filterTitle.toLowerCase()) &&
       book.author.toLowerCase().includes(filterAuthor.toLowerCase()) &&

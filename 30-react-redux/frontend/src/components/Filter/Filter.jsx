@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import filterSlice from '../../redux/slices/filterSlice'
+import filter from '../../redux/slices/filterSlice'
 import './Filter.css'
 const Filter = () => {
   const dispatch = useDispatch()
@@ -8,7 +8,7 @@ const Filter = () => {
   const author = useSelector((state) => state.filter.author)
   const favorite = useSelector((state) => state.filter.favorite)
   const handleResetFiters = () => {
-    dispatch(filterSlice.actions.resetFilters())
+    dispatch(filter.actions.resetFilters())
   }
   return (
     <div className='app-block filter'>
@@ -18,7 +18,7 @@ const Filter = () => {
             type='text'
             placeholder='Filter by title...'
             value={title}
-            onChange={(e) => dispatch(filterSlice.actions.setTitleFilter(e.target.value))}
+            onChange={(e) => dispatch(filter.actions.setTitleFilter(e.target.value))}
           />
         </div>
         <div className='filter-group'>
@@ -26,16 +26,12 @@ const Filter = () => {
             type='text'
             placeholder='Filter by author...'
             value={author}
-            onChange={(e) => dispatch(filterSlice.actions.setAuthorFilter(e.target.value))}
+            onChange={(e) => dispatch(filter.actions.setAuthorFilter(e.target.value))}
           />
         </div>
         <div className='filter-group'>
           <label>
-            <input
-              type='checkbox'
-              checked={favorite}
-              onChange={() => dispatch(filterSlice.actions.setFavoriteFilter())}
-            />
+            <input type='checkbox' checked={favorite} onChange={() => dispatch(filter.actions.setFavoriteFilter())} />
             Favorite
           </label>
         </div>
