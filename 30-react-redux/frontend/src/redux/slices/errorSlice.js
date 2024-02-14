@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const error = createSlice({
+const errorSlice = createSlice({
   name: 'error',
   initialState: '',
-  redusers: {
+  reducers: {
     setError: (_, action) => action.payload,
     clearError: () => '',
   },
 })
-export default error
+export default errorSlice

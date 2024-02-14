@@ -4,6 +4,7 @@ import books from '../../redux/slices/booksSlice'
 import randomBooks from '../../data/books.json'
 import createBookWithId from '../../utils/createBookWithId'
 import { fetchBook } from '../../redux/slices/booksSlice'
+import error from '../../redux/slices/errorSlice'
 import './BookForm.css'
 
 const BookForm = () => {
@@ -17,6 +18,8 @@ const BookForm = () => {
       dispatch(books.actions.addBook(createBookWithId({ title, author }, 'manually')))
       setTitle('')
       setAuthor('')
+    } else {
+      dispatch(error.actions.setError('You must fill title and author!'))
     }
   }
   const handleBookTitleChange = (e) => {
