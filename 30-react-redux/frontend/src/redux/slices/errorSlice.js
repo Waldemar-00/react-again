@@ -8,4 +8,5 @@ const errorSlice = createSlice({
     clearError: () => '',
   },
 })
+export const { setError, clearError } = errorSlice.actions
 export default errorSlice

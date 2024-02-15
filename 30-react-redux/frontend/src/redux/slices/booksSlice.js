@@ -1,10 +1,17 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import createBookWithId from '../../utils/createBookWithId'
+import { setError } from './errorSlice'
 
-export const fetchBook = createAsyncThunk('books/fetchBook', async () => {
-  const res = await axios.get('http://localhost:4000/random-book')
-  return res.data
+export const fetchBook = createAsyncThunk('books/fetchBook', async (URL, thunkAPI) => {
+  try {
+    const res = await axios.get(URL)
+    return res.data
+  } catch (error) {
+    thunkAPI.dispatch(setError(error.message))
+    throw error //! we don't get there to the fulfild
+    //! console.error(error) - we don't get error -  see cause below
+  }
 })
 
 const books = createSlice({
@@ -20,19 +27,13 @@ const books = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchBook.pending, () => {})
     builder.addCase(fetchBook.fulfilled, (state, action) => {
+      //!!! I don't have any problem with rendering because - the optional chaining!
       if (action.payload?.title && action.payload?.author) state.push(createBookWithId(action.payload, 'API'))
+      //!!! I don't have any problem with rendering because - the optional chaining!
     })
-    builder.addCase(fetchBook.rejected, () => {})
+    builder.addCase(fetchBook.rejected, () => {
+      console.log('We get to the REJECTED thanks to throw error')
+    })
   },
 })
-// export const thunk = async (dispatch, getState) => {
-//   try {
-//     const response = await axios.get('http://localhost:4000/random-book')
-//     if (response?.data?.title && response?.data?.author)
-//       dispatch(booksSlice.actions.addBook(createBookWithId(response.data, 'api')))
-//   } catch (error) {
-//     console.error(error)
-//   }
-// }
-
 export default books

@@ -33,7 +33,7 @@ const BookForm = () => {
     dispatch(books.actions.addRandomBook(createBookWithId(randomBooks[index], 'random')))
   }
   const handleGetBookViaAPI = () => {
-    dispatch(fetchBook())
+    dispatch(fetchBook('http://localhost:4000/random-book'))
   }
   return (
     <div className='app-block book-form'>
