@@ -24,6 +24,13 @@ const books = createSlice({
     changeFavorite: (state, action) =>
       state.map((book) => (book.id === action.payload ? { ...book, isFavorite: !book.isFavorite } : book)),
   },
+  // extraReducers: {
+  //   [fetchBook.pending]: () => {},
+  //   [fetchBook.fulfilled]: (state, action) => {
+  //     if (action.payload?.title && action.payload?.author) state.push(createBookWithId(action.payload, 'API'))
+  //   },
+  //   [fetchBook.rejected]: () => console.log('We get to the REJECTED thanks to throw error'),
+  // },
   extraReducers: (builder) => {
     builder.addCase(fetchBook.pending, () => {})
     builder.addCase(fetchBook.fulfilled, (state, action) => {
