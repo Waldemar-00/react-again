@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaSpinner } from 'react-icons/fa'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import books from '../../redux/slices/booksSlice'
 import randomBooks from '../../data/books.json'
 import createBookWithId from '../../utils/createBookWithId'
@@ -11,7 +11,7 @@ import './BookForm.css'
 const BookForm = () => {
   const [title, setTitle] = React.useState('')
   const [author, setAuthor] = React.useState('')
-  const [isLoading, setLoading] = React.useState(false)
+  const isLoading = useSelector((state) => state.books.isLoading)
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
@@ -36,10 +36,10 @@ const BookForm = () => {
   }
   const handleGetBookViaAPI = async () => {
     try {
-      setLoading(true)
+      dispatch(books.actions.toggleLoading())
       await dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
     } finally {
-      setLoading(false)
+      dispatch(books.actions.toggleLoading())
     }
   }
   return (

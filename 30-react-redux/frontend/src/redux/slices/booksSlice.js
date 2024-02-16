@@ -9,38 +9,40 @@ export const fetchBook = createAsyncThunk('books/fetchBook', async (URL, thunkAP
     return res.data
   } catch (error) {
     thunkAPI.dispatch(setError(error.message))
-    throw error //! we don't get there to the fulfild
-    //! console.error(error) - we don't get error -  see cause below
+    throw error
   }
 })
 
 const books = createSlice({
   name: 'books',
-  initialState: [],
-  reducers: {
-    addBook: (state, action) => [...state, action.payload],
-    delBook: (state, action) => state.filter((book) => book.id !== action.payload),
-    addRandomBook: (state, action) => [...state, action.payload],
-    changeFavorite: (state, action) =>
-      state.map((book) => (book.id === action.payload ? { ...book, isFavorite: !book.isFavorite } : book)),
+  initialState: {
+    books: [],
+    isLoadingViaAPI: false,
   },
-  // extraReducers: {
-  //   [fetchBook.pending]: () => {},
-  //   [fetchBook.fulfilled]: (state, action) => {
-  //     if (action.payload?.title && action.payload?.author) state.push(createBookWithId(action.payload, 'API'))
-  //   },
-  //   [fetchBook.rejected]: () => console.log('We get to the REJECTED thanks to throw error'),
-  // },
+  reducers: {
+    addBook: (state, action) => {
+      state.books.push(action.payload)
+    },
+    delBook: (state, action) => {
+      const index = state.books.findIndex((book) => book.id === action.payload)
+      state.books.splice(index, 1)
+    },
+    addRandomBook: (state, action) => {
+      state.books.push(action.payload)
+    },
+    changeFavorite: (state, action) => {
+      state.books.map((book) => (book.id === action.payload ? (book.isFavorite = !book.isFavorite) : book))
+    },
+    toggleLoading: (state) => {
+      state.isLoading = !state.isLoading
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchBook.pending, () => {})
     builder.addCase(fetchBook.fulfilled, (state, action) => {
-      //!!! I don't have any problem with rendering because - the optional chaining!
-      if (action.payload?.title && action.payload?.author) state.push(createBookWithId(action.payload, 'API'))
-      //!!! I don't have any problem with rendering because - the optional chaining!
+      if (action.payload?.title && action.payload?.author) state.books.push(createBookWithId(action.payload, 'API'))
     })
-    builder.addCase(fetchBook.rejected, () => {
-      console.log('We get to the REJECTED thanks to throw error')
-    })
+    builder.addCase(fetchBook.rejected, () => console.log('We get to the REJECTED thanks to throw error'))
   },
 })
 export default books

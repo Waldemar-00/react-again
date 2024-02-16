@@ -6,7 +6,7 @@ import books from '../../redux/slices/booksSlice'
 import './BookList.css'
 
 const BookList = () => {
-  const bookState = useSelector((state) => state.books, shallowEqual)
+  const bookState = useSelector((state) => state.books.books, shallowEqual)
   const filterTitle = useSelector((state) => state.filter.title)
   const filterAuthor = useSelector((state) => state.filter.author)
   const filterFavorite = useSelector((state) => state.filter.favorite)
