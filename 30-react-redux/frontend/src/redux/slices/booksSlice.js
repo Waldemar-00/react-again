@@ -9,7 +9,8 @@ export const fetchBook = createAsyncThunk('books/fetchBook', async (URL, thunkAP
     return res.data
   } catch (error) {
     thunkAPI.dispatch(setError(error.message))
-    throw error
+    // throw error
+    return thunkAPI.rejectWithValue(error)
   }
 })
 
@@ -47,7 +48,7 @@ const books = createSlice({
     })
     builder.addCase(fetchBook.rejected, (state) => {
       state.isLoadingViaAPI = false
-      //! We get to the REJECTED thanks to throw error - see upper
+      //! We get to the REJECTED thanks to throw error or rejectWithValue(error) - see upper
     })
   },
 })

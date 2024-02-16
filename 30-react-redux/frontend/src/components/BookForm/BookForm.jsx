@@ -34,14 +34,15 @@ const BookForm = () => {
     const index = Math.floor(Math.random() * randomBooks.length)
     dispatch(books.actions.addRandomBook(createBookWithId(randomBooks[index], 'random')))
   }
-  const handleGetBookViaAPI = async () => {
-    try {
-      // dispatch(books.actions.toggleLoading())
-      await dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
-    } finally {
-      // dispatch(books.actions.toggleLoading())
-    }
-  }
+  // const handleGetBookViaAPI = async () => {
+  //   try {
+  //     dispatch(books.actions.toggleLoading())
+  //     await dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
+  //   } finally {
+  //     dispatch(books.actions.toggleLoading())
+  //   }
+  // }
+  const handleGetBookViaAPI = () => dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
   return (
     <div className='app-block book-form'>
       <h2>Add a new book</h2>
