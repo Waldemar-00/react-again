@@ -11,7 +11,7 @@ import './BookForm.css'
 const BookForm = () => {
   const [title, setTitle] = React.useState('')
   const [author, setAuthor] = React.useState('')
-  const isLoading = useSelector((state) => state.books.isLoading)
+  const isLoading = useSelector((state) => state.books.isLoadingViaAPI)
   const dispatch = useDispatch()
 
   const handleSubmit = (e) => {
@@ -36,10 +36,10 @@ const BookForm = () => {
   }
   const handleGetBookViaAPI = async () => {
     try {
-      dispatch(books.actions.toggleLoading())
+      // dispatch(books.actions.toggleLoading())
       await dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
     } finally {
-      dispatch(books.actions.toggleLoading())
+      // dispatch(books.actions.toggleLoading())
     }
   }
   return (

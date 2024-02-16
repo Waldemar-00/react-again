@@ -38,9 +38,12 @@ const books = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchBook.pending, () => {})
+    builder.addCase(fetchBook.pending, (state) => {
+      state.isLoadingViaAPI = !state.isLoadingViaAPI
+    })
     builder.addCase(fetchBook.fulfilled, (state, action) => {
       if (action.payload?.title && action.payload?.author) state.books.push(createBookWithId(action.payload, 'API'))
+      state.isLoadingViaAPI = !state.isLoadingViaAPI
     })
     builder.addCase(fetchBook.rejected, () => console.log('We get to the REJECTED thanks to throw error'))
   },
