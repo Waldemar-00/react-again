@@ -39,13 +39,16 @@ const books = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchBook.pending, (state) => {
-      state.isLoadingViaAPI = !state.isLoadingViaAPI
+      state.isLoadingViaAPI = true
     })
     builder.addCase(fetchBook.fulfilled, (state, action) => {
       if (action.payload?.title && action.payload?.author) state.books.push(createBookWithId(action.payload, 'API'))
-      state.isLoadingViaAPI = !state.isLoadingViaAPI
+      state.isLoadingViaAPI = false
     })
-    builder.addCase(fetchBook.rejected, () => console.log('We get to the REJECTED thanks to throw error'))
+    builder.addCase(fetchBook.rejected, (state) => {
+      state.isLoadingViaAPI = false
+      //! We get to the REJECTED thanks to throw error - see upper
+    })
   },
 })
 export default books
